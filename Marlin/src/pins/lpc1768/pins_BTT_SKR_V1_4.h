@@ -482,6 +482,14 @@
  *   P0_28  (58) (Open collector)
  */
 
+/**
+ * LASER PIN
+ * AS FROM https://marlinfw.org/docs/configuration/laser_spindle.html
+ */
+#define SPINDLE_LASER_ENA_PIN P1_00   // digital pin
+#define SPINDLE_LASER_PWM_PIN    P1_00   // digital pin - MUST BE HARDWARE PWM
+//#define SPINDLE_DIR_PIN          zz   // digital pin
+
 //
 // Include common SKR pins
 //
