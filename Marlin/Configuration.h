@@ -853,7 +853,7 @@
 //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-#define USE_PROBE_FOR_Z_HOMING
+//#define USE_PROBE_FOR_Z_HOMING
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1106,7 +1106,7 @@
 #endif
 //#define PROBING_FANS_OFF          // Turn fans off when probing
 //#define PROBING_STEPPERS_OFF      // Turn steppers off (unless needed to hold position) when probing
-//#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
+#define DELAY_BEFORE_PROBING 200  // (ms) To prevent vibrations from triggering piezo sensors
 
 // Require minimum nozzle and/or bed temperature for probing.
 //#define PREHEAT_BEFORE_PROBING
@@ -1164,7 +1164,7 @@
 #define Z_HOMING_HEIGHT  10      // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
                                   // Be sure to have this much clearance over your Z_MAX_POS to prevent grinding.
 
-#define Z_AFTER_HOMING  10      // (mm) Height to move to after homing Z
+#define Z_AFTER_HOMING  0      // (mm) Height to move to after homing Z
 
 // Direction of endstops when homing; 1=MAX, -1=MIN
 // :[-1,1]
@@ -2595,12 +2595,12 @@
  * Set this manually if there are extra servos needing manual control.
  * Set to 0 to turn off servo support.
  */
-//#define NUM_SERVOS 3 // Servo index starts with 0 for M280 command
+#define NUM_SERVOS 1 // Servo index starts with 0 for M280 command
 
 // (ms) Delay  before the next move will start, to give the servo time to reach its target angle.
 // 300ms is a good value but you can try less delay.
 // If the servo can't reach the requested position, increase it.
-#define SERVO_DELAY { 300 }
+#define SERVO_DELAY { 750 }
 
 // Only power servos during movement, otherwise leave off to prevent jitter
 //#define DEACTIVATE_SERVOS_AFTER_MOVE
