@@ -110,7 +110,10 @@
  * Currently Ethernet (-2) is only supported on Teensy 4.1 boards.
  * :[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7]
  */
-#define SERIAL_PORT_2 0
+#define SERIAL_PORT_2 3
+#define LCD_SERIAL_PORT 0
+#define LCD_BAUDRATE 115200
+
 
 /**
  * This setting determines the communication speed of the printer.
@@ -751,7 +754,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 100 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 103.68 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1006,7 +1009,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 24.4, 1.8, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 24.40, 1.80, -2.50 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
