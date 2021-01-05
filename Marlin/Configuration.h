@@ -507,9 +507,9 @@
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
     // Santiago
-    #define DEFAULT_Kp 31.0
-    #define DEFAULT_Ki 3.21
-    #define DEFAULT_Kd 74.87
+    #define DEFAULT_Kp 26.68
+    #define DEFAULT_Ki 2.09
+    #define DEFAULT_Kd 85.28
 
     //default
     #define DEFAULT_Kp  22.20
@@ -552,9 +552,9 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   //Santiago
-  #define DEFAULT_bedKp 106.35
-  #define DEFAULT_bedKi 16.94
-  #define DEFAULT_bedKd 445.01
+  #define DEFAULT_bedKp 106.13
+  #define DEFAULT_bedKi 18.01
+  #define DEFAULT_bedKd 416.79
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
   //#define DEFAULT_bedKp 10.00
@@ -1337,8 +1337,8 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-#define AUTO_BED_LEVELING_BILINEAR
-//#define AUTO_BED_LEVELING_UBL
+//#define AUTO_BED_LEVELING_BILINEAR
+#define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
 /**
@@ -1387,10 +1387,10 @@
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for the G26 Mesh Validation Tool.
-    #define MESH_TEST_HOTEND_TEMP  205    // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
-    #define MESH_TEST_BED_TEMP      65    // (°C) Default bed temperature for the G26 Mesh Validation Tool.
+    #define MESH_TEST_HOTEND_TEMP  190    // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
+    #define MESH_TEST_BED_TEMP      68    // (°C) Default bed temperature for the G26 Mesh Validation Tool.
     #define G26_XY_FEEDRATE         20    // (mm/s) Feedrate for XY Moves for the G26 Mesh Validation Tool.
-    #define G26_RETRACT_MULTIPLIER   6.0  // G26 Q (retraction) used by default between mesh test elements.
+    #define G26_RETRACT_MULTIPLIER   5.0  // G26 Q (retraction) used by default between mesh test elements.
   #endif
 
 #endif
@@ -1431,7 +1431,7 @@
   #define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
   #define MESH_INSET 15              // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 6     // Don't use more than 15 points per axis, implementation limited.
+  #define GRID_MAX_POINTS_X 5     // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
@@ -1446,7 +1446,7 @@
   //=================================== Mesh ==================================
   //===========================================================================
 
-  #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
+  #define MESH_INSET 20          // Set Mesh bounds as an inset region of the bed
   #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
@@ -1625,12 +1625,12 @@
 
 // Preheat Constants
 #define PREHEAT_1_LABEL       "SUNLU PLA"
-#define PREHEAT_1_TEMP_HOTEND 205
-#define PREHEAT_1_TEMP_BED     67
+#define PREHEAT_1_TEMP_HOTEND 185
+#define PREHEAT_1_TEMP_BED     60
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "Amazon PETG"
-#define PREHEAT_2_TEMP_HOTEND 233
+#define PREHEAT_2_TEMP_HOTEND 225
 #define PREHEAT_2_TEMP_BED    77
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
 
