@@ -98,8 +98,8 @@
 //
 // Filament Runout Sensor
 //
-#define FIL_RUNOUT_PIN                     P1_26  // E0DET
-#define FIL_RUNOUT2_PIN                    P1_25  // E1DET
+ #define FIL_RUNOUT_PIN                     P1_26  // E0DET
+ #define FIL_RUNOUT2_PIN                    P1_25  // E1DET
 
 //
 // Power Supply Control
@@ -490,7 +490,16 @@
 #define SPINDLE_LASER_PWM_PIN    P1_00   // digital pin - MUST BE HARDWARE PWM
 //#define SPINDLE_DIR_PIN          zz   // digital pin
 
+/**
+ * FAN PINS
+ */
+#define FAN_PIN P2_03
+#define FAN1_PIN P2_04
+#define FAN2_PIN P1_25
+#define FAN3_PIN P0_10
+
 //
 // Include common SKR pins
 //
 #include "pins_BTT_SKR_common.h"
+
