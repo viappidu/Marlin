@@ -106,7 +106,7 @@
 
 //TODO: use serial port 3 when connecting esp01s,
 // otherwise reverting back to 0
-//#define SERIAL_PORT 3
+#define SERIAL_PORT_3 3
 #define SERIAL_PORT 0
 
 /**
