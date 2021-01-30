@@ -47,8 +47,8 @@
 #define X_DIAG_PIN                         P1_29  // X-STOP
 #define Y_DIAG_PIN                         P1_28  // Y-STOP
 #define Z_DIAG_PIN                         P1_27  // Z-STOP
-#define E0_DIAG_PIN                        P1_26  // E0DET
-#define E1_DIAG_PIN                        P1_25  // E1DET
+//#define E0_DIAG_PIN                        P1_26  // E0DET
+//#define E1_DIAG_PIN                        P1_25  // E1DET
 
 //
 // Limit Switches
@@ -56,7 +56,7 @@
 #ifdef X_STALL_SENSITIVITY
   #define X_STOP_PIN                  X_DIAG_PIN
   #if X_HOME_DIR < 0
-    #define X_MAX_PIN                      P1_26  // E0DET
+    //#define X_MAX_PIN                      P1_26  // E0DET
   #else
     #define X_MIN_PIN                      P1_26  // E0DET
   #endif
@@ -74,7 +74,7 @@
 #ifdef Y_STALL_SENSITIVITY
   #define Y_STOP_PIN                  Y_DIAG_PIN
   #if Y_HOME_DIR < 0
-    #define Y_MAX_PIN                      P1_25  // E1DET
+    //#define Y_MAX_PIN                      P1_25  // E1DET
   #else
     #define Y_MIN_PIN                      P1_25  // E1DET
   #endif
@@ -119,21 +119,21 @@
 //
 // Filament Runout Sensor
 //
- #define FIL_RUNOUT_PIN                     P1_26  // E0DET
- #define FIL_RUNOUT2_PIN                    P1_25  // E1DET
+// #define FIL_RUNOUT_PIN                     P1_26  // E0DET
+// #define FIL_RUNOUT2_PIN                    P1_25  // E1DET
 
 //
 // Power Supply Control
 //
 #ifndef PS_ON_PIN
-  #define PS_ON_PIN                        P1_00  // PWRDET
+//  #define PS_ON_PIN                        P1_00  // PWRDET
 #endif
 
 //
 // Power Loss Detection
 //
 #ifndef POWER_LOSS_PIN
-  #define POWER_LOSS_PIN                   P1_00  // PWRDET
+//  #define POWER_LOSS_PIN                   P1_00  // PWRDET
 #endif
 
 //
@@ -532,7 +532,7 @@
 #define FAN_PIN P2_03
 #define FAN1_PIN P2_04
 #define FAN2_PIN P1_25
-#define FAN3_PIN P0_10
+#define FAN3_PIN P1_26
 
 //
 // Include common SKR pins
