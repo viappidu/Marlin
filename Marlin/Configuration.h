@@ -427,7 +427,7 @@
 #define TEMP_SENSOR_7 0
 #define TEMP_SENSOR_BED 1
 #define TEMP_SENSOR_PROBE 0
-#define TEMP_SENSOR_CHAMBER 0
+#define TEMP_SENSOR_CHAMBER 1
 
 // Dummy thermistor constant temperature readings, for use with 998 and 999
 #define DUMMY_THERMISTOR_998_VALUE 25
@@ -1016,7 +1016,7 @@
  *     O-- FRONT --+
  */
 //#define NOZZLE_TO_PROBE_OFFSET { 24.40, 1.80, -2.50 }
-#define NOZZLE_TO_PROBE_OFFSET { 24.40, 31.80, -2.50 } //added 30 to y for spacers
+#define NOZZLE_TO_PROBE_OFFSET { 24.40, 31.80, -1.50 } //added 30 to y for spacers
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
