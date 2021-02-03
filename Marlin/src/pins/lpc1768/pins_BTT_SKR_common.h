@@ -42,7 +42,7 @@
 #endif
 
 // Ignore temp readings during development.
-#define BOGUS_TEMPERATURE_GRACE_PERIOD    4000
+//#define BOGUS_TEMPERATURE_GRACE_PERIOD    2000
 
 //
 // Steppers
@@ -62,13 +62,13 @@
 //  3.3V max when defined as an analog input
 //
 #ifndef TEMP_0_PIN
-  #define TEMP_0_PIN                    P0_24_A1  // A1 (T1) - (68) - TEMP_0_PIN
+  #define TEMP_0_PIN                    P0_23_A1  // A1 (T1) - (68) - TEMP_0_PIN
 #endif
 #ifndef TEMP_1_PIN
-  #define TEMP_1_PIN                    P0_25_A2  // A2 (T2) - (69) - TEMP_1_PIN
+  #define TEMP_1_PIN                    P0_24_A2  // A2 (T2) - (69) - TEMP_1_PIN
 #endif
 #ifndef TEMP_BED_PIN
-  #define TEMP_BED_PIN                  P0_23_A0  // A0 (T0) - (67) - TEMP_BED_PIN
+  #define TEMP_BED_PIN                  P0_25_A0  // A0 (T0) - (67) - TEMP_BED_PIN
 #endif
 
 #if HOTENDS == 1
