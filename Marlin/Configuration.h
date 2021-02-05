@@ -507,9 +507,9 @@
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
     // Santiago
-    #define DEFAULT_Kp 26.68
-    #define DEFAULT_Ki 2.09
-    #define DEFAULT_Kd 85.28
+    #define DEFAULT_Kp 33.34
+    #define DEFAULT_Ki 3.62
+    #define DEFAULT_Kd 76.79
 
     //default
     #define DEFAULT_Kp  22.20
@@ -552,9 +552,9 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   //Santiago
-  #define DEFAULT_bedKp 106.13
-  #define DEFAULT_bedKi 18.01
-  #define DEFAULT_bedKd 416.79
+  #define DEFAULT_bedKp 173.37
+  #define DEFAULT_bedKi 31.01
+  #define DEFAULT_bedKd 646.14
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
   //#define DEFAULT_bedKp 10.00
@@ -760,7 +760,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 98.04 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 100.04 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1552,22 +1552,22 @@
  *    +-------------->X     +-------------->X     +-------------->Y
  *     XY_SKEW_FACTOR        XZ_SKEW_FACTOR        YZ_SKEW_FACTOR
  */
-//#define SKEW_CORRECTION
+#define SKEW_CORRECTION
 
 #if ENABLED(SKEW_CORRECTION)
   // Input all length measurements here:
-  #define XY_DIAG_AC 282.8427124746
-  #define XY_DIAG_BD 282.8427124746
-  #define XY_SIDE_AD 200
+  #define XY_DIAG_AC 289
+  #define XY_DIAG_BD 279.2
+  #define XY_SIDE_AD 198.5
 
   // Or, set the default skew factors directly here
   // to override the above measurements:
-  #define XY_SKEW_FACTOR 0.0
+  //#define XY_SKEW_FACTOR 0.0
 
   //#define SKEW_CORRECTION_FOR_Z
   #if ENABLED(SKEW_CORRECTION_FOR_Z)
-    #define XZ_DIAG_AC 282.8427124746
-    #define XZ_DIAG_BD 282.8427124746
+    #define XZ_DIAG_AC 277.6
+    #define XZ_DIAG_BD 276.4
     #define YZ_DIAG_AC 282.8427124746
     #define YZ_DIAG_BD 282.8427124746
     #define YZ_SIDE_AD 200
@@ -1576,7 +1576,7 @@
   #endif
 
   // Enable this option for M852 to set skew at runtime
-  //#define SKEW_CORRECTION_GCODE
+  #define SKEW_CORRECTION_GCODE
 #endif
 
 //=============================================================================

@@ -65,7 +65,7 @@
     #define X_MIN_PIN                      P1_29  // X-STOP
   #endif
   #ifndef X_MAX_PIN
-    #define X_MAX_PIN                      P1_26  // E0DET
+    #define X_MAX_PIN                      //P1_26  // E0DET
   #endif
 #else
   #define X_STOP_PIN                       P1_29  // X-STOP
@@ -529,10 +529,10 @@
 /**
  * FAN PINS
  */
-#define FAN_PIN P2_03
-#define FAN1_PIN P2_04
+#define FAN_PIN P1_26
+//#define FAN1_PIN P2_04
 #define FAN2_PIN P1_25
-#define FAN3_PIN P1_26
+#define FAN3_PIN P2_03
 
 //
 // Include common SKR pins
