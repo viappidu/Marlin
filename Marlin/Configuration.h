@@ -1190,11 +1190,11 @@
 #define Y_BED_SIZE 240
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -37
-#define Y_MIN_POS -45
+#define X_MIN_POS -62
+#define Y_MIN_POS -60
 #define Z_MIN_POS 0
 #define X_MAX_POS 260 //X_BED_SIZE
-#define Y_MAX_POS 225 //Y_BED_SIZE
+#define Y_MAX_POS 210 //Y_BED_SIZE
 #define Z_MAX_POS 240
 
 /**
@@ -1389,10 +1389,10 @@
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for the G26 Mesh Validation Tool.
-    #define MESH_TEST_HOTEND_TEMP  245    // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
+    #define MESH_TEST_HOTEND_TEMP  236    // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
     #define MESH_TEST_BED_TEMP      90    // (°C) Default bed temperature for the G26 Mesh Validation Tool.
     #define G26_XY_FEEDRATE         20    // (mm/s) Feedrate for XY Moves for the G26 Mesh Validation Tool.
-    #define G26_RETRACT_MULTIPLIER   5.0  // G26 Q (retraction) used by default between mesh test elements.
+    #define G26_RETRACT_MULTIPLIER   3.5  // G26 Q (retraction) used by default between mesh test elements.
   #endif
 
 #endif
@@ -1497,8 +1497,8 @@
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-#define MANUAL_X_HOME_POS -25
-#define MANUAL_Y_HOME_POS -15
+// #define MANUAL_X_HOME_POS 0
+// #define MANUAL_Y_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 0
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
