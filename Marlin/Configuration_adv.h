@@ -1733,10 +1733,10 @@
  * Override if the automatically selected points are inadequate.
  */
 #if EITHER(AUTO_BED_LEVELING_3POINT, AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X PROBING_MARGIN
-  #define PROBE_PT_1_Y PROBING_MARGIN
+  #define PROBE_PT_1_X 35 // PROBING_MARGIN
+  #define PROBE_PT_1_Y 42 // PROBING_MARGIN
   #define PROBE_PT_2_X X_BED_SIZE - 35 // abt NOZZLE_TO_PROBE_OFFSET + PROBING_MARGIN
-  #define PROBE_PT_2_Y PROBING_MARGIN
+  #define PROBE_PT_2_Y 42 // PROBING_MARGIN
   #define PROBE_PT_3_X X_BED_SIZE / 2
   #define PROBE_PT_3_Y Y_BED_SIZE - 42 // abt NOZZLE_TO_PROBE_OFFSET + PROBING_MARGIN
 #endif
@@ -2341,7 +2341,7 @@
   #define INTERPOLATE      true
 
   #if AXIS_IS_TMC(X)
-    #define X_CURRENT       500        // (mA) RMS current. Multiply by 1.414 for peak current.
+    #define X_CURRENT       800        // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_CURRENT_HOME  500 //X_CURRENT  // (mA) RMS current for sensorless homing
     #define X_MICROSTEPS     16        // 0..256
     #define X_RSENSE          0.11
@@ -2359,7 +2359,7 @@
   #endif
 
   #if AXIS_IS_TMC(Y)
-    #define Y_CURRENT       500
+    #define Y_CURRENT       800
     #define Y_CURRENT_HOME  500 //Y_CURRENT
     #define Y_MICROSTEPS     16
     #define Y_RSENSE          0.11
@@ -2377,7 +2377,7 @@
   #endif
 
   #if AXIS_IS_TMC(Z)
-    #define Z_CURRENT       800
+    #define Z_CURRENT       960
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     16
     #define Z_RSENSE          0.11
@@ -2659,9 +2659,9 @@
 
   #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
-    #define X_STALL_SENSITIVITY  80
+    #define X_STALL_SENSITIVITY  90
     #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
-    #define Y_STALL_SENSITIVITY  70
+    #define Y_STALL_SENSITIVITY  40
     #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
     //#define Z_STALL_SENSITIVITY  0
     //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
