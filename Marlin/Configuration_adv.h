@@ -1733,12 +1733,12 @@
  * Override if the automatically selected points are inadequate.
  */
 #if EITHER(AUTO_BED_LEVELING_3POINT, AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X 15
-  #define PROBE_PT_1_Y 180
-  #define PROBE_PT_2_X 15
-  #define PROBE_PT_2_Y 20
-  #define PROBE_PT_3_X 170
-  #define PROBE_PT_3_Y 20
+  #define PROBE_PT_1_X PROBING_MARGIN
+  #define PROBE_PT_1_Y PROBING_MARGIN
+  #define PROBE_PT_2_X X_BED_SIZE - 35 // abt NOZZLE_TO_PROBE_OFFSET + PROBING_MARGIN
+  #define PROBE_PT_2_Y PROBING_MARGIN
+  #define PROBE_PT_3_X X_BED_SIZE / 2
+  #define PROBE_PT_3_Y Y_BED_SIZE - 42 // abt NOZZLE_TO_PROBE_OFFSET + PROBING_MARGIN
 #endif
 
 /**
