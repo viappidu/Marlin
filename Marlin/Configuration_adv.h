@@ -733,7 +733,7 @@
    * This feature was designed for Delta's with very fast Z moves however higher speed cartesians may function
    * If the machine cannot raise the probe fast enough after a trigger, it may enter a fault state.
    */
-  #define BLTOUCH_HS_MODE
+  //#define BLTOUCH_HS_MODE
 
   // Safety: Enable voltage mode settings in the LCD menu.
   #define BLTOUCH_LCD_VOLTAGE_MENU
@@ -1723,7 +1723,7 @@
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
   #define LIN_ADVANCE_K 0.5    // Unit: mm compression per 1mm/s extruder speed
   //#define LA_DEBUG            // If enabled, this will generate debug information output over USB.
-  //#define EXPERIMENTAL_SCURVE // Enable this option to permit S-Curve Acceleration
+  #define EXPERIMENTAL_SCURVE // Enable this option to permit S-Curve Acceleration
 #endif
 
 // @section leveling
@@ -1733,12 +1733,12 @@
  * Override if the automatically selected points are inadequate.
  */
 #if EITHER(AUTO_BED_LEVELING_3POINT, AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X 35 // PROBING_MARGIN
-  #define PROBE_PT_1_Y 42 // PROBING_MARGIN
-  #define PROBE_PT_2_X X_BED_SIZE - 35 // abt NOZZLE_TO_PROBE_OFFSET + PROBING_MARGIN
-  #define PROBE_PT_2_Y 42 // PROBING_MARGIN
-  #define PROBE_PT_3_X X_BED_SIZE / 2
-  #define PROBE_PT_3_Y Y_BED_SIZE - 42 // abt NOZZLE_TO_PROBE_OFFSET + PROBING_MARGIN
+  // #define PROBE_PT_1_X 35 // PROBING_MARGIN
+  // #define PROBE_PT_1_Y 42 // PROBING_MARGIN
+  // #define PROBE_PT_2_X X_BED_SIZE - 35 // abt NOZZLE_TO_PROBE_OFFSET + PROBING_MARGIN
+  // #define PROBE_PT_2_Y 42 // PROBING_MARGIN
+  // #define PROBE_PT_3_X X_BED_SIZE / 2
+  // #define PROBE_PT_3_Y Y_BED_SIZE - 42 // abt NOZZLE_TO_PROBE_OFFSET + PROBING_MARGIN
 #endif
 
 /**
@@ -2413,7 +2413,7 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT      700
+    #define E0_CURRENT      900
     #define E0_MICROSTEPS    16
     #define E0_RSENSE         0.11
     #define E0_CHAIN_POS     -1
@@ -2659,9 +2659,9 @@
 
   #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
-    #define X_STALL_SENSITIVITY  90
+    #define X_STALL_SENSITIVITY  100
     #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
-    #define Y_STALL_SENSITIVITY  40
+    #define Y_STALL_SENSITIVITY  100
     #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
     //#define Z_STALL_SENSITIVITY  0
     //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
