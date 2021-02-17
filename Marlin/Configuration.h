@@ -1017,7 +1017,7 @@
  */
 //#define NOZZLE_TO_PROBE_OFFSET { 24.40, 1.80, -1.45 }
 // OLD SETUP --- #define NOZZLE_TO_PROBE_OFFSET { 24.40, 31.80, -1.60 } //added 30 to y for spacers
-#define NOZZLE_TO_PROBE_OFFSET { 28.80, 11.50, -1.60 } //added 30 to y for spacers
+#define NOZZLE_TO_PROBE_OFFSET { -28.80, 11.50, -1.60 } //added 30 to y for spacers
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1191,7 +1191,7 @@
 #define Y_BED_SIZE 200
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -50
+#define X_MIN_POS -40
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE //235 //X_BED_SIZE
