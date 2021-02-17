@@ -1016,7 +1016,8 @@
  *     O-- FRONT --+
  */
 //#define NOZZLE_TO_PROBE_OFFSET { 24.40, 1.80, -1.45 }
-#define NOZZLE_TO_PROBE_OFFSET { 24.40, 31.80, -1.52 } //added 30 to y for spacers
+// OLD SETUP --- #define NOZZLE_TO_PROBE_OFFSET { 24.40, 31.80, -1.60 } //added 30 to y for spacers
+#define NOZZLE_TO_PROBE_OFFSET { 28.80, 11.50, -1.60 } //added 30 to y for spacers
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1157,7 +1158,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR false
+#define INVERT_E0_DIR true
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
