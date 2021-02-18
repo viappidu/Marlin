@@ -760,8 +760,8 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-// OLD VALUES #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.10, 81.29, 400, 100.04 } //Y comes perfect
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.10, 81.29, 400, 111.16 } //Y comes perfect
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.10, 81.29, 400, 100.04 } //Y comes perfect
+// DIRECT CONFIGURATION #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.10, 81.29, 400, 111.16 } //Y comes perfect
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -797,7 +797,7 @@
  *   M204 T    Travel Acceleration
  */
 #define DEFAULT_ACCELERATION          800 // 3000    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  3000 //800 // 3000    // E acceleration for retracts
+#define DEFAULT_RETRACT_ACCELERATION  10000 //800 // 3000    // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   3000 //800 // 3000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
@@ -1018,7 +1018,7 @@
  */
 //#define NOZZLE_TO_PROBE_OFFSET { 24.40, 1.80, -1.45 }
 // OLD SETUP --- #define NOZZLE_TO_PROBE_OFFSET { 24.40, 31.80, -1.60 } //added 30 to y for spacers
-#define NOZZLE_TO_PROBE_OFFSET { -28.80, 11.50, -1.60 } //added 30 to y for spacers
+#define NOZZLE_TO_PROBE_OFFSET { -28.80, 11.50, 0 } //added 30 to y for spacers
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1159,7 +1159,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
@@ -1188,7 +1188,7 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 235
+#define X_BED_SIZE 265
 #define Y_BED_SIZE 200
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
@@ -1394,7 +1394,7 @@
     #define MESH_TEST_HOTEND_TEMP  240    // (°C) Default nozzle temperature for the G26 Mesh Validation Tool.
     #define MESH_TEST_BED_TEMP      90    // (°C) Default bed temperature for the G26 Mesh Validation Tool.
     #define G26_XY_FEEDRATE         20    // (mm/s) Feedrate for XY Moves for the G26 Mesh Validation Tool.
-    #define G26_RETRACT_MULTIPLIER   0.4  // G26 Q (retraction) used by default between mesh test elements.
+    #define G26_RETRACT_MULTIPLIER   3  // G26 Q (retraction) used by default between mesh test elements.
   #endif
 
 #endif
