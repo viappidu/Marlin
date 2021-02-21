@@ -39,7 +39,7 @@
 #define HAS_OTG_USB_HOST_SUPPORT
 
 #define TP                                        // Enable to define servo and probe pins
-#define M5_EXTENDER                               // The M5 extender is attached
+//#define M5_EXTENDER                               // The M5 extender is attached
 
 //
 // Servos
@@ -282,6 +282,7 @@
 //
 #define TEMP_0_PIN                          PC1   // T1 <-> E0
 #define TEMP_1_PIN                          PC2   // T2 <-> E1
+#define TEMP_CHAMBER_PIN                    PC2   // T2 <-> E1
 #define TEMP_2_PIN                          PC3   // T3 <-> E2
 
 #if ENABLED(M5_EXTENDER)
@@ -469,6 +470,15 @@
   #endif
 
 #endif // HAS_WIRED_LCD
+
+/**
+ * LASER PIN
+ * AS FROM https://marlinfw.org/docs/configuration/laser_spindle.html
+ */
+#define SPINDLE_LASER_ENA_PIN PB0 //P1_00   // digital pin
+#define SPINDLE_LASER_PWM_PIN PB0 //   P1_00   // digital pin - MUST BE HARDWARE PWM
+//#define SPINDLE_DIR_PIN          zz   // digital pin
+
 
 #undef TP
 #undef M5_EXTENDER
