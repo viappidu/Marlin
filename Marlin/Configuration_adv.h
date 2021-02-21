@@ -511,7 +511,7 @@
  */
 #define CASE_LIGHT_ENABLE
 #if ENABLED(CASE_LIGHT_ENABLE)
-  #define CASE_LIGHT_PIN P1_24 //4                  // Override the default pin if needed
+  #define CASE_LIGHT_PIN PF13 //P1_24 //4                  // Override the default pin if needed
   #define INVERT_CASE_LIGHT FALSE             // Set true if Case Light is ON when pin is LOW
   #define CASE_LIGHT_DEFAULT_ON FALSE          // Set default power-up state on
   #define CASE_LIGHT_DEFAULT_BRIGHTNESS 105   // Set default power-up brightness (0-255, requires PWM pin)
@@ -2693,7 +2693,7 @@
    * Beta feature!
    * Create a 50/50 square wave step pulse optimal for stepper drivers.
    */
-  //#define SQUARE_WAVE_STEPPING
+  #define SQUARE_WAVE_STEPPING
 
   /**
    * Enable M122 debugging command for TMC stepper drivers.
