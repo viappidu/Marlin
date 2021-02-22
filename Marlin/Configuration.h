@@ -110,7 +110,7 @@
 
 //TODO: use serial port 3 when connecting esp01s,
 // otherwise reverting back to 0
-#define SERIAL_PORT 1
+#define SERIAL_PORT -1
 
 /**
  * Select a secondary serial port on the board to use for communication with the host.
@@ -134,7 +134,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
@@ -772,7 +772,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 200, 200, 10, 45 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -785,7 +785,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 10000 } // { 3000, 3000, 100, 10000 }
+#define DEFAULT_MAX_ACCELERATION      { 1500, 1200, 150, 10000 } // { 3000, 3000, 100, 10000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -801,8 +801,8 @@
  *   M204 T    Travel Acceleration
  */
 #define DEFAULT_ACCELERATION          700 // 3000    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  10000 //800 // 3000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   3000 //800 // 3000    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_RETRACT_ACCELERATION  3000 //800 // 3000    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   2000 //800 // 3000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
  * Default Jerk limits (mm/s)
@@ -812,10 +812,10 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-//#define CLASSIC_JERK
+#define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
-  #define DEFAULT_XJERK 10.0
-  #define DEFAULT_YJERK 10.0
+  #define DEFAULT_XJERK 6 //10.0
+  #define DEFAULT_YJERK 6 //10.0
   #define DEFAULT_ZJERK  0.3
 
   //#define TRAVEL_EXTRA_XYJERK 0.0     // Additional jerk allowance for all travel moves
@@ -826,7 +826,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK    12.0  // May be used by Linear Advance
+#define DEFAULT_EJERK    15.0  // May be used by Linear Advance
 
 /**
  * Junction Deviation Factor
@@ -1022,17 +1022,17 @@
  */
 //#define NOZZLE_TO_PROBE_OFFSET { 24.40, 1.80, -1.45 }
 // OLD SETUP --- #define NOZZLE_TO_PROBE_OFFSET { 24.40, 31.80, -1.60 } //added 30 to y for spacers
-#define NOZZLE_TO_PROBE_OFFSET { -28.80, 11.50, 0 } //added 30 to y for spacers
+#define NOZZLE_TO_PROBE_OFFSET { -28.80, 11.50, -0.7 } //added 30 to y for spacers
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 25
+#define PROBING_MARGIN 10
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_SPEED (63*60)
+#define XY_PROBE_SPEED (83*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_SPEED_FAST (43*60)
+#define Z_PROBE_SPEED_FAST (63*60)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
@@ -2512,7 +2512,7 @@
 // which is not as annoying as with the hardware PWM. On the other hand, if this frequency
 // is too low, you should also increment SOFT_PWM_SCALE.
 //TODO: might need to reenable line below
-//#define FAN_SOFT_PWM
+#define FAN_SOFT_PWM
 
 // Incrementing this by 1 will double the software PWM frequency,
 // affecting heaters, and the fan if FAN_SOFT_PWM is enabled.
