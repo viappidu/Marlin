@@ -110,7 +110,7 @@
 
 //TODO: use serial port 3 when connecting esp01s,
 // otherwise reverting back to 0
-#define SERIAL_PORT -1
+#define SERIAL_PORT 1
 
 /**
  * Select a secondary serial port on the board to use for communication with the host.

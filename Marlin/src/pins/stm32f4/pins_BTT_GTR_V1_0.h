@@ -56,9 +56,9 @@
 #define X_DIAG_PIN                          PF2   // X-
 #define Y_DIAG_PIN                          PC13  // Y-
 #define Z_DIAG_PIN                          PE0   // Z-
-#define E0_DIAG_PIN                         PG14  // X+
-#define E1_DIAG_PIN                         PG9   // Y+
-#define E2_DIAG_PIN                         PD3   // Z+
+//#define E0_DIAG_PIN                         PG14  // X+
+//#define E1_DIAG_PIN                         PG9   // Y+
+//#define E2_DIAG_PIN                         PD3   // Z+
 
 //
 // Limit Switches
@@ -95,7 +95,7 @@
     #define Z_MIN_PIN                E2_DIAG_PIN  // Z+
   #endif
 #else
-  #define Z_MIN_PIN                   Z_DIAG_PIN  // Z-
+  #define Z_MIN_PIN                   PH11 //Z_DIAG_PIN  // Z-
   #define Z_MAX_PIN                  E2_DIAG_PIN  // Z+
 #endif
 
