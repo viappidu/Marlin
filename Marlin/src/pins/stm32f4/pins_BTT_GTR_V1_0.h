@@ -55,7 +55,7 @@
 //
 #define X_DIAG_PIN                          PF2   // X-
 #define Y_DIAG_PIN                          PC13  // Y-
-#define Z_DIAG_PIN                          PB11 //PE0   // Z-
+#define Z_DIAG_PIN                          PE0   // Z-
 #define E0_DIAG_PIN                         PG14  // X+
 #define E1_DIAG_PIN                         PG9   // Y+
 #define E2_DIAG_PIN                         PD3   // Z+
