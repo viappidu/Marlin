@@ -516,7 +516,7 @@
   //#define INVERT_CASE_LIGHT             // Set true if Case Light is ON when pin is LOW
   #define CASE_LIGHT_DEFAULT_ON true          // Set default power-up state on
   #define CASE_LIGHT_DEFAULT_BRIGHTNESS 105   // Set default power-up brightness (0-255, requires PWM pin)
-  //#define CASE_LIGHT_MAX_PWM 128            // Limit pwm
+  //#define CASE_LIGHT_MAX_PWM 255            // Limit pwm
   #define CASE_LIGHT_MENU                   // Add Case Light options to the LCD menu
   //#define CASE_LIGHT_NO_BRIGHTNESS          // Disable brightness control. Enable for non-PWM lighting.
   #define CASE_LIGHT_USE_NEOPIXEL           // Use NeoPixel LED as case light, requires NEOPIXEL_LED.
@@ -1166,16 +1166,16 @@
   //#define LCD_DECIMAL_SMALL_XY
 
   // Add an 'M73' G-code to set the current percentage
-  //#define LCD_SET_PROGRESS_MANUALLY
+  #define LCD_SET_PROGRESS_MANUALLY
 
   // Show the E position (filament used) during printing
   //#define LCD_SHOW_E_TOTAL
 #endif
 
 #if EITHER(SDSUPPORT, LCD_SET_PROGRESS_MANUALLY) && ANY(HAS_MARLINUI_U8GLIB, HAS_MARLINUI_HD44780, IS_TFTGLCD_PANEL, EXTENSIBLE_UI)
-  //#define SHOW_REMAINING_TIME       // Display estimated time to completion
+  #define SHOW_REMAINING_TIME       // Display estimated time to completion
   #if ENABLED(SHOW_REMAINING_TIME)
-    //#define USE_M73_REMAINING_TIME  // Use remaining time from M73 command instead of estimation
+    #define USE_M73_REMAINING_TIME  // Use remaining time from M73 command instead of estimation
     //#define ROTATE_PROGRESS_DISPLAY // Display (P)rogress, (E)lapsed, and (R)emaining time
   #endif
 
@@ -1385,7 +1385,7 @@
    */
   //#define SD_FIRMWARE_UPDATE
   #if ENABLED(SD_FIRMWARE_UPDATE)
-    #define SD_FIRMWARE_UPDATE_EEPROM_ADDR    0x1FF
+    #define SD_FIRMWARE_UPDATE_EEPROM_ADDR    0x08008000 //0x1FF
     #define SD_FIRMWARE_UPDATE_ACTIVE_VALUE   0xF0
     #define SD_FIRMWARE_UPDATE_INACTIVE_VALUE 0xFF
   #endif
@@ -2029,10 +2029,10 @@
 // Therefore some clients abort after 30 seconds in a timeout.
 // Some other clients start sending commands while receiving a 'wait'.
 // This "wait" is only sent when the buffer is empty. 1 second is a good value here.
-#define NO_TIMEOUTS 1000 // Milliseconds
+//#define NO_TIMEOUTS 1000 // Milliseconds
 
 // Some clients will have this feature soon. This could make the NO_TIMEOUTS unnecessary.
- #define ADVANCED_OK
+//  #define ADVANCED_OK
 
 // Printrun may have trouble receiving long strings all at once.
 // This option inserts short delays between lines of serial output.
@@ -3286,11 +3286,11 @@
 //#define NO_WORKSPACE_OFFSETS
 
 // Extra options for the M114 "Current Position" report
-//#define M114_DETAIL         // Use 'M114` for details to check planner calculations
-//#define M114_REALTIME       // Real current position based on forward kinematics
+#define M114_DETAIL         // Use 'M114` for details to check planner calculations
+#define M114_REALTIME       // Real current position based on forward kinematics
 //#define M114_LEGACY         // M114 used to synchronize on every call. Enable if needed.
 
-//#define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)
+#define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)
 
 /**
  * Set the number of proportional font spaces required to fill up a typical character space.
@@ -3322,13 +3322,13 @@
  * Note that G0 feedrates should be used with care for 3D printing (if used at all).
  * High feedrates may cause ringing and harm print quality.
  */
-//#define PAREN_COMMENTS      // Support for parentheses-delimited comments
-//#define GCODE_MOTION_MODES  // Remember the motion mode (G0 G1 G2 G3 G5 G38.X) and apply for X Y Z E F, etc.
+#define PAREN_COMMENTS      // Support for parentheses-delimited comments
+#define GCODE_MOTION_MODES  // Remember the motion mode (G0 G1 G2 G3 G5 G38.X) and apply for X Y Z E F, etc.
 
 // Enable and set a (default) feedrate for all G0 moves
-//#define G0_FEEDRATE 3000 // (mm/min)
+#define G0_FEEDRATE 1500 // (mm/min)
 #ifdef G0_FEEDRATE
-  //#define VARIABLE_G0_FEEDRATE // The G0 feedrate is set by F in G0 motion mode
+  #define VARIABLE_G0_FEEDRATE // The G0 feedrate is set by F in G0 motion mode
 #endif
 
 /**
@@ -3402,7 +3402,7 @@
  *
  * Implement M486 to allow Marlin to skip objects
  */
-//#define CANCEL_OBJECTS
+#define CANCEL_OBJECTS
 
 /**
  * I2C position encoders for closed loop control.
