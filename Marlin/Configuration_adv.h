@@ -512,7 +512,7 @@
  */
 #define CASE_LIGHT_ENABLE
 #if ENABLED(CASE_LIGHT_ENABLE)
-  #define CASE_LIGHT_PIN PF13 //P1_24 //4                  // Override the default pin if needed
+  #define CASE_LIGHT_PIN NEOPIXEL_PIN //P1_24 //4                  // Override the default pin if needed
   //#define INVERT_CASE_LIGHT             // Set true if Case Light is ON when pin is LOW
   #define CASE_LIGHT_DEFAULT_ON true          // Set default power-up state on
   #define CASE_LIGHT_DEFAULT_BRIGHTNESS 105   // Set default power-up brightness (0-255, requires PWM pin)

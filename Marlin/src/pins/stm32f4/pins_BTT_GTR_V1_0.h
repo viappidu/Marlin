@@ -471,6 +471,11 @@
 
 #endif // HAS_WIRED_LCD
 
+//
+// Neopixel
+//
+#define NEOPIXEL_PIN                        PF13
+
 /**
  * LASER PIN
  * AS FROM https://marlinfw.org/docs/configuration/laser_spindle.html
