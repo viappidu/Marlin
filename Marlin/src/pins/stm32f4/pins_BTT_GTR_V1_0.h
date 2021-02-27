@@ -476,6 +476,13 @@
 //
 #define NEOPIXEL_PIN                        PF13
 
+//
+// Coolant
+//
+#define COOLANT_MIST_PIN                    PD3
+//#define COOLANT_FLOOD_PIN                   PD3
+
+
 /**
  * LASER PIN
  * AS FROM https://marlinfw.org/docs/configuration/laser_spindle.html
