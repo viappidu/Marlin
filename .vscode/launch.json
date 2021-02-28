@@ -15,7 +15,7 @@
             "executable": "c:/Users/viapp/Documents/GitHub/Marlin/.pio/build/BIGTREE_GTR_V1_0/firmware.elf",
             "projectEnvName": "BIGTREE_GTR_V1_0",
             "toolchainBinDir": "C:/Users/viapp/.platformio/packages/toolchain-gccarmnoneeabi@1.90201.191206/bin",
-            "svdPath": "C:/Users/viapp/.platformio/platforms/ststm32/misc/svd/STM32F40x.svd",
+            "svdPath": "C:/Users/viapp/.platformio/platforms/ststm32@6.1.1/misc/svd/STM32F40x.svd",
             "preLaunchTask": {
                 "type": "PlatformIO",
                 "task": "Pre-Debug (BIGTREE_GTR_V1_0)"
@@ -29,7 +29,7 @@
             "executable": "c:/Users/viapp/Documents/GitHub/Marlin/.pio/build/BIGTREE_GTR_V1_0/firmware.elf",
             "projectEnvName": "BIGTREE_GTR_V1_0",
             "toolchainBinDir": "C:/Users/viapp/.platformio/packages/toolchain-gccarmnoneeabi@1.90201.191206/bin",
-            "svdPath": "C:/Users/viapp/.platformio/platforms/ststm32/misc/svd/STM32F40x.svd",
+            "svdPath": "C:/Users/viapp/.platformio/platforms/ststm32@6.1.1/misc/svd/STM32F40x.svd",
             "internalConsoleOptions": "openOnSessionStart"
         }
     ]
