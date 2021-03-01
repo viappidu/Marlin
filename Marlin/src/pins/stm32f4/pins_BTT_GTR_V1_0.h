@@ -39,7 +39,7 @@
 #define HAS_OTG_USB_HOST_SUPPORT
 
 #define TP                                        // Enable to define servo and probe pins
-#define M5_EXTENDER                               // The M5 extender is attached
+// #define M5_EXTENDER                               // The M5 extender is attached
 
 //
 // Servos
@@ -312,8 +312,8 @@
 // Heaters / Fans
 //
 #define HEATER_0_PIN                        PB1   // Heater0
-#define HEATER_1_PIN                        PA1   // Heater1
-#define HEATER_2_PIN                        PB0   // Heater2
+// #define HEATER_1_PIN                        PA1   // Heater1
+// #define HEATER_2_PIN                        PB0   // Heater2
 
 #if ENABLED(M5_EXTENDER)
   #define HEATER_3_PIN                      PD15  // M5 HEAT1
@@ -469,6 +469,32 @@
   #endif
 
 #endif // HAS_WIRED_LCD
+
+//
+// Neopixel
+//
+// configuration.h line 2646 #define NEOPIXEL_PIN                        PF13
+
+//
+// Chamber
+//
+#define TEMP_CHAMBER_PIN                    PC2   // T2 <-> E1
+//#define CHAMBER_FAN_PIN                   FAN2_PIN   // Fan2
+
+//
+// Coolant
+//
+#define COOLANT_MIST_PIN                    PD3
+//#define COOLANT_FLOOD_PIN                   PD3
+
+
+/**
+ * LASER PIN
+ * AS FROM https://marlinfw.org/docs/configuration/laser_spindle.html
+ */
+#define SPINDLE_LASER_ENA_PIN PB0 //P1_00   // digital pin
+#define SPINDLE_LASER_PWM_PIN PB0 //   P1_00   // digital pin - MUST BE HARDWARE PWM
+//#define SPINDLE_DIR_PIN          zz   // digital pin
 
 #undef TP
 #undef M5_EXTENDER
