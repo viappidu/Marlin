@@ -247,14 +247,17 @@
   #define Z_SERIAL_TX_PIN                   PB5
   #define Z_SERIAL_RX_PIN                   PB5
 
+  #define Z2_SERIAL_TX_PIN                  PD4
+  #define Z2_SERIAL_RX_PIN                  PD4
+
   #define E0_SERIAL_TX_PIN                  PG10
   #define E0_SERIAL_RX_PIN                  PG10
 
-  #define E1_SERIAL_TX_PIN                  PD4
-  #define E1_SERIAL_RX_PIN                  PD4
+  // #define E1_SERIAL_TX_PIN                  PD4
+  // #define E1_SERIAL_RX_PIN                  PD4
 
-  #define E2_SERIAL_TX_PIN                  PC12
-  #define E2_SERIAL_RX_PIN                  PC12
+  // #define E2_SERIAL_TX_PIN                  PC12
+  // #define E2_SERIAL_RX_PIN                  PC12
 
   #if ENABLED(M5_EXTENDER)
     #define E3_SERIAL_TX_PIN                PG4
@@ -469,32 +472,6 @@
   #endif
 
 #endif // HAS_WIRED_LCD
-
-//
-// Neopixel
-//
-// configuration.h line 2646 #define NEOPIXEL_PIN                        PF13
-
-//
-// Chamber
-//
-#define TEMP_CHAMBER_PIN                    PC2   // T2 <-> E1
-//#define CHAMBER_FAN_PIN                   FAN2_PIN   // Fan2
-
-//
-// Coolant
-//
-#define COOLANT_MIST_PIN                    PD3
-//#define COOLANT_FLOOD_PIN                   PD3
-
-
-/**
- * LASER PIN
- * AS FROM https://marlinfw.org/docs/configuration/laser_spindle.html
- */
-#define SPINDLE_LASER_ENA_PIN PB0 //P1_00   // digital pin
-#define SPINDLE_LASER_PWM_PIN PB0 //   P1_00   // digital pin - MUST BE HARDWARE PWM
-//#define SPINDLE_DIR_PIN          zz   // digital pin
 
 #undef TP
 #undef M5_EXTENDER
