@@ -1042,7 +1042,7 @@
  * vibration and surface artifacts. The algorithm adapts to provide the best possible step smoothing at the
  * lowest stepping frequencies.
  */
-//#define ADAPTIVE_STEP_SMOOTHING
+#define ADAPTIVE_STEP_SMOOTHING  //enabled in v1eng
 
 /**
  * Custom Microstepping
@@ -1459,7 +1459,7 @@
    *
    * :[ 'LCD', 'ONBOARD', 'CUSTOM_CABLE' ]
    */
-  #define SDCARD_CONNECTION LCD
+  #define SDCARD_CONNECTION ONBOARD
 
   // Enable if SD detect is rendered useless (e.g., by using an SD extender)
   //#define NO_SD_DETECT
@@ -1933,11 +1933,11 @@
 //
 #define ARC_SUPPORT                 // Disable this feature to save ~3226 bytes
 #if ENABLED(ARC_SUPPORT)
-  #define MM_PER_ARC_SEGMENT      0.05 // (mm) Length (or minimum length) of each arc segment
-  //#define ARC_SEGMENTS_PER_R    1    // Max segment length, MM_PER = Min
-  #define MIN_ARC_SEGMENTS        5    // Minimum number of segments in a complete circle
+  #define MM_PER_ARC_SEGMENT      0.2  //v1eng 0.05 // (mm) Length (or minimum length) of each arc segment
+  #define ARC_SEGMENTS_PER_R      1    //enabled in v1eng Max segment length, MM_PER = Min
+  //#define MIN_ARC_SEGMENTS      5    //diabled inv1eng Minimum number of segments in a complete circle
   //#define ARC_SEGMENTS_PER_SEC 50    // Use feedrate to choose segment length (with MM_PER_ARC_SEGMENT as the minimum)
-  #define N_ARC_CORRECTION        5    // Number of interpolated segments between corrections
+  #define N_ARC_CORRECTION       25    //v1eng Number of interpolated segments between corrections
   //#define ARC_P_CIRCLES              // Enable the 'P' parameter to specify complete circles
   //#define CNC_WORKSPACE_PLANES       // Allow G2/G3 to operate in XY, ZX, or YZ planes
   //#define SF_ARC_FIX                 // Enable only if using SkeinForge with "Arc Point" fillet procedure
@@ -2407,7 +2407,7 @@
  */
 #if HAS_TRINAMIC_CONFIG
 
-  #define HOLD_MULTIPLIER    0.5  // Scales down the holding current from run current
+  #define HOLD_MULTIPLIER    0.8  // Scales down the holding current from run current
 
   /**
    * Interpolate microsteps to 256
@@ -2452,8 +2452,8 @@
   #endif
 
   #if AXIS_IS_TMC(Z)
-    #define Z_CURRENT       800
-    #define Z_CURRENT_HOME  500
+    #define Z_CURRENT       900
+    #define Z_CURRENT_HOME  600
     #define Z_MICROSTEPS     16        //64
     #define Z_RSENSE          0.11
     #define Z_CHAIN_POS      -1
@@ -2593,22 +2593,23 @@
    * Set *_SERIAL_TX_PIN and *_SERIAL_RX_PIN to match for all drivers
    * on the same serial port, either here or in your board's pins file.
    */
-  //#define  X_SLAVE_ADDRESS 0
-  //#define  Y_SLAVE_ADDRESS 0
-  //#define  Z_SLAVE_ADDRESS 0
-  //#define X2_SLAVE_ADDRESS 0
-  //#define Y2_SLAVE_ADDRESS 0
-  //#define Z2_SLAVE_ADDRESS 0
-  //#define Z3_SLAVE_ADDRESS 0
-  //#define Z4_SLAVE_ADDRESS 0
-  //#define E0_SLAVE_ADDRESS 0
-  //#define E1_SLAVE_ADDRESS 0
-  //#define E2_SLAVE_ADDRESS 0
-  //#define E3_SLAVE_ADDRESS 0
-  //#define E4_SLAVE_ADDRESS 0
-  //#define E5_SLAVE_ADDRESS 0
-  //#define E6_SLAVE_ADDRESS 0
-  //#define E7_SLAVE_ADDRESS 0
+  //TODO anabled all in v1eng. TRIPLE CHECK THIS
+  #define  X_SLAVE_ADDRESS 0
+  #define  Y_SLAVE_ADDRESS 0
+  #define  Z_SLAVE_ADDRESS 0
+  #define X2_SLAVE_ADDRESS 0
+  #define Y2_SLAVE_ADDRESS 0
+  #define Z2_SLAVE_ADDRESS 0
+  #define Z3_SLAVE_ADDRESS 0
+  #define Z4_SLAVE_ADDRESS 0
+  #define E0_SLAVE_ADDRESS 0
+  #define E1_SLAVE_ADDRESS 0
+  #define E2_SLAVE_ADDRESS 0
+  #define E3_SLAVE_ADDRESS 0
+  #define E4_SLAVE_ADDRESS 0
+  #define E5_SLAVE_ADDRESS 0
+  #define E6_SLAVE_ADDRESS 0
+  #define E7_SLAVE_ADDRESS 0
 
   /**
    * Software enable
@@ -3085,7 +3086,7 @@
 #if EITHER(SPINDLE_FEATURE, LASER_FEATURE)
   #define SPINDLE_LASER_ENA_PIN         PB0
   #define SPINDLE_LASER_PWM_PIN         PB0
-  #define SPINDLE_LASER_ACTIVE_STATE    LOW    // Set to "HIGH" if the on/off function is active HIGH
+  #define SPINDLE_LASER_ACTIVE_STATE    LOW    // is HIGH in v1eng    // Set to "HIGH" if the on/off function is active HIGH
   #define SPINDLE_LASER_PWM             true   // Set to "true" if your controller supports setting the speed/power
   #define SPINDLE_LASER_PWM_INVERT      false  // Set to "true" if the speed/power goes up when you want it to go slower
 
@@ -3167,7 +3168,7 @@
        * - Ramps the power up every N steps to approximate the speed trapezoid.
        * - Due to the limited power resolution this is only approximate.
        */
-      #define LASER_POWER_INLINE_TRAPEZOID
+      #define LASER_POWER_INLINE_TRAPEZOID  //disabled in v1eng
 
       /**
        * Continuously calculate the current power (nominal_power * current_rate / nominal_rate).
@@ -3178,14 +3179,14 @@
        * board isn't able to generate steps fast enough (and you are using LASER_POWER_INLINE_TRAPEZOID_CONT), increase this.
        * Note that when this is zero it means it occurs every cycle; 1 means a delay wait one cycle then run, etc.
        */
-      //#define LASER_POWER_INLINE_TRAPEZOID_CONT
+      #define LASER_POWER_INLINE_TRAPEZOID_CONT
 
       /**
        * Stepper iterations between power updates. Increase this value if the board
        * can't keep up with the processing demands of LASER_POWER_INLINE_TRAPEZOID_CONT.
        * Disable (or set to 0) to recalculate power on every stepper iteration.
        */
-      //#define LASER_POWER_INLINE_TRAPEZOID_CONT_PER 10
+      #define LASER_POWER_INLINE_TRAPEZOID_CONT_PER 0
 
       /**
        * Include laser power in G0/G1/G2/G3/G5 commands with the 'S' parameter
@@ -3195,7 +3196,7 @@
       #if ENABLED(LASER_MOVE_POWER)
         // Turn off the laser on G0 moves with no power parameter.
         // If a power parameter is provided, use that instead.
-        //#define LASER_MOVE_G0_OFF
+        // #define LASER_MOVE_G0_OFF  // enabled in v1eng
 
         // Turn off the laser on G28 homing.
         #define LASER_MOVE_G28_OFF
@@ -3302,7 +3303,7 @@
  * Enables G53 and G54-G59.3 commands to select coordinate systems
  * and G92.1 to reset the workspace to native machine space.
  */
-//#define CNC_COORDINATE_SYSTEMS
+#define CNC_COORDINATE_SYSTEMS  // enabled in v1eng
 
 /**
  * Auto-report temperatures with M155 S<seconds>
