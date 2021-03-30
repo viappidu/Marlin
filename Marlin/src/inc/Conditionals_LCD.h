@@ -229,14 +229,18 @@
   #define BOARD_ST7920_DELAY_2 DELAY_NS(125)
   #define BOARD_ST7920_DELAY_3 DELAY_NS(125)
 
-#elif ANY(REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER, ANET_FULL_GRAPHICS_LCD, ANET_FULL_GRAPHICS_LCD_ALT_WIRING, BQ_LCD_SMART_CONTROLLER)
+#elif ANY(REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER, ANET_FULL_GRAPHICS_LCD, ANET_FULL_GRAPHICS_LCD_ALT_WIRING, BQ_LCD_SMART_CONTROLLER, K3D_FULL_GRAPHIC_SMART_CONTROLLER)
 
   #define IS_RRD_FG_SC 1
 
 #elif ENABLED(REPRAP_DISCOUNT_SMART_CONTROLLER)
 
-  // RepRapDiscount LCD or Graphical LCD with rotary click encoder
+  #define IS_RRD_SC 1   // RepRapDiscount LCD or Graphical LCD with rotary click encoder
+
+#elif ENABLED(K3D_242_OLED_CONTROLLER)
+
   #define IS_RRD_SC 1
+  #define U8GLIB_SSD1309
 
 #endif
 
@@ -456,7 +460,7 @@
 #endif
 
 // Extensible UI serial touch screens. (See src/lcd/extui)
-#if ANY(HAS_DGUS_LCD, MALYAN_LCD, TOUCH_UI_FTDI_EVE, ANYCUBIC_LCD_I3MEGA, ANYCUBIC_LCD_CHIRON)
+#if ANY(HAS_DGUS_LCD, MALYAN_LCD, TOUCH_UI_FTDI_EVE, ANYCUBIC_LCD_I3MEGA, ANYCUBIC_LCD_CHIRON, NEXTION_TFT)
   #define IS_EXTUI 1
   #define EXTENSIBLE_UI
 #endif
@@ -477,7 +481,7 @@
   #endif
 #endif
 
-#if EITHER(HAS_DISPLAY, GLOBAL_STATUS_MESSAGE)
+#if ANY(HAS_DISPLAY, DWIN_CREALITY_LCD, GLOBAL_STATUS_MESSAGE)
   #define HAS_STATUS_MESSAGE 1
 #endif
 
@@ -497,11 +501,11 @@
 /**
  *  Multi-Material-Unit supported models
  */
-#define PRUSA_MMU1      1
-#define PRUSA_MMU2      2
-#define PRUSA_MMU2S     3
-#define SMUFF_EMU_MMU2  12
-#define SMUFF_EMU_MMU2S 13
+#define PRUSA_MMU1             1
+#define PRUSA_MMU2             2
+#define PRUSA_MMU2S            3
+#define EXTENDABLE_EMU_MMU2   12
+#define EXTENDABLE_EMU_MMU2S  13
 
 #ifdef MMU_MODEL
   #define HAS_MMU 1
@@ -513,16 +517,16 @@
     #define HAS_PRUSA_MMU2 1
     #define HAS_PRUSA_MMU2S 1
   #endif
-  #if MMU_MODEL == SMUFF_EMU_MMU2 || MMU_MODEL == SMUFF_EMU_MMU2S
-    #define HAS_SMUFF 1
+  #if MMU_MODEL == EXTENDABLE_EMU_MMU2 || MMU_MODEL == EXTENDABLE_EMU_MMU2S
+    #define HAS_EXTENDABLE_MMU 1
   #endif
 #endif
 
 #undef PRUSA_MMU1
 #undef PRUSA_MMU2
 #undef PRUSA_MMU2S
-#undef SMUFF_EMU_MMU2
-#undef SMUFF_EMU_MMU2S
+#undef EXTENDABLE_EMU_MMU2
+#undef EXTENDABLE_EMU_MMU2S
 
 /**
  * Extruders have some combination of stepper motors and hotends
@@ -575,7 +579,7 @@
   #undef DISABLE_INACTIVE_EXTRUDER
 #endif
 
-// Průša MMU1, MMU 2.0, MMUS 2.0 and SMuFF force SINGLENOZZLE
+// Průša MMU1, MMU(S) 2.0 and EXTENDABLE_EMU_MMU2(S) force SINGLENOZZLE
 #if HAS_MMU
   #define SINGLENOZZLE
 #endif
