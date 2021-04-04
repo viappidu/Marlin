@@ -513,9 +513,13 @@
     // #define DEFAULT_Kp  22.20
     // #define DEFAULT_Ki   1.08
     // #define DEFAULT_Kd 114.00
-    #define DEFAULT_Kp 33.34
-    #define DEFAULT_Ki 3.62
-    #define DEFAULT_Kd 76.79
+    //TODO remove OLDVALUES
+    // #define DEFAULT_Kp 33.34
+    // #define DEFAULT_Ki 3.62
+    // #define DEFAULT_Kd 76.79
+    #define DEFAULT_Kp 19.21 //17.46
+    #define DEFAULT_Ki 1.85 //1.71
+    #define DEFAULT_Kd 49.75 //44.70
   #endif
 #endif // PIDTEMP
 
@@ -1066,7 +1070,7 @@
  */
 // #define NOZZLE_TO_PROBE_OFFSET { -28.80, 11.50, -0.7 }
 //TODO LASER #define NOZZLE_TO_PROBE_OFFSET { -28.80, 11.50, -8.50 }
-#define NOZZLE_TO_PROBE_OFFSET { -28.80, 11.50, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { -28.80, 11.50, -1.05 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
